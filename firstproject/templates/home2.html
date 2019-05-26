@@ -1,0 +1,33 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Posts</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <h1>Posts</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Text</th>
+          <th>Published Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+          <tr>
+            <td>
+              {{ post.title }}<br>
+              <small style="color: #888">{{ post.author }}</small>
+            </td>
+            <td>{{post.text}}</td>	
+            <td>{{post.published_date}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
